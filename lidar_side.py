@@ -6,7 +6,6 @@ import time
 
 import robot_lib
 
-
 def main():
     '''
     Main
@@ -18,7 +17,7 @@ def main():
     print('transmitting')
     while True:
         print('.', end='', flush=True)
-        sock.sendto(b"robot", robot_lib.multicast_group)
+        robot_lib.sock_send_auth(sock, 'imaprettykitty', ['aaa', 'bbb', 'foo', 'bar'])
         time.sleep(1)
 
 
